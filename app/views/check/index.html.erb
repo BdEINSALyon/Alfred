@@ -1,5 +1,8 @@
-<div class="container">
-  <div class="form-group">
+<div class="container" ng-app="app">
+  <script>
+    window.Participants = <%= raw @participants %>;
+  </script>
+  <div class="form-group" ng-controller="Participants">
     <div class="row">
       <div class="col-xs-12 col-sm-offset-3 col-sm-6">
         <div class="panel panel-default">
@@ -9,21 +12,19 @@
 
           <div class="row">
             <div class="col-xs-12">
-              <div class="input-group c-search">
-                <input type="text" class="form-control" id="contact-list-search">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search text-muted"></span></button>
-                            </span>
-              </div>
+              <input type="text" placeholder="Search" class="form-control no-radius" id="contact-list-search" ng-model="search">
             </div>
           </div>
 
-          <ul class="list-group" id="contact-list">
-            <li class="list-group-item">
-              <h2>Philippe VIENNE</h2>
+          <ul class="list-group" id="contact-list" ng-if="search">
+            <li ng-repeat="p in participants | filter : search" class="list-group-item">
+              <h4>{{p.first_name}} {{p.last_name}}</h4>
               <div class="clearfix"></div>
             </li>
           </ul>
+          <div class="text-center text-muted" id="no-search" ng-if="search == false">
+            Please search for a user.
+          </div>
         </div>
       </div>
     </div>
