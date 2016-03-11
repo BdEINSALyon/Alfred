@@ -19,6 +19,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancancan'
 gem 'active_admin_import', '2.1.2'
 gem 'rails_12factor', group: :production
+gem 'bootstrap-sass'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
