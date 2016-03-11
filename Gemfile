@@ -5,7 +5,7 @@ ruby '2.2.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
-gem 'puma', group: :production
+gem 'puma'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
