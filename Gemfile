@@ -15,12 +15,17 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'devise'
+gem 'devise-bootstrap-views'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'cancancan'
 gem 'active_admin_import', '2.1.2'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'angularjs-rails'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular-qrcode'
+  gem 'rails-assets-monospaced--bower-qrcode-generator'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
