@@ -4,5 +4,6 @@ ActiveAdmin.register Participant do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
   permit_params :first_name, :last_name, :ticket_code, :payment_method
+  active_admin_import
 
 end

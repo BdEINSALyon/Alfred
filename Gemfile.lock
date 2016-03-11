@@ -39,6 +39,10 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_admin_import (2.1.2)
+      activeadmin (>= 0.6.0)
+      activerecord-import (~> 0.4, >= 0.4.1)
+      rubyzip (~> 1.0, >= 1.0.0)
     activejob (4.2.5)
       activesupport (= 4.2.5)
       globalid (>= 0.3.0)
@@ -49,6 +53,8 @@ GEM
       activemodel (= 4.2.5)
       activesupport (= 4.2.5)
       arel (~> 6.0)
+    activerecord-import (0.12.0)
+      activerecord (>= 3.0)
     activesupport (4.2.5)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
@@ -164,6 +170,7 @@ GEM
       json (~> 1.4)
     responders (2.1.1)
       railties (>= 4.2.0, < 5.1)
+    rubyzip (1.2.0)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -204,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_import (= 2.1.2)
   activeadmin!
   byebug
   cancancan
