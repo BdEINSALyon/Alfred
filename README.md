@@ -10,6 +10,8 @@ This application requires ruby 2.2 at least and a Postgres database.
 The seed creates an admin account with email "admin@example.org" and password "password"
 
 ## Licence
+[![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)
+
 &copy; 2016 Philippe VIENNE
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
