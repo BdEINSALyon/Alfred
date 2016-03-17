@@ -7,7 +7,7 @@ This application is written in Ruby and can be deployed directly to Heroku or Do
 This application requires ruby 2.2 at least and a Postgres database.
 
 ## Installation notes
-The seed creates an admin account with email "admin@example.org" and password "password"
+The seed creates an admin account with email "admin@example.org" and password "password". Don't forget to remove them.
 
 ## Licence
 [![GNU GPL v3.0](http://www.gnu.org/graphics/gplv3-127x51.png)](http://www.gnu.org/licenses/gpl.html)
