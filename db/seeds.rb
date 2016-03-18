@@ -5,7 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password')
-PaymentMethod.create(name: 'CB')
-PaymentMethod.create(name: 'CHQ')
-PaymentMethod.create(name: 'CHQ')
+User.create!(email: 'user@example.com', password: 'password', password_confirmation: 'password') unless User.all.count
+unless PaymentMethod.all.count
+  PaymentMethod.create(name: 'CB')
+  PaymentMethod.create(name: 'CHQ')
+  PaymentMethod.create(name: 'CHQ')
+end
