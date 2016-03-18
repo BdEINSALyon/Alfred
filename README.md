@@ -3,6 +3,8 @@ Accessible Listing For Registration Entry Delving is a simple system to search i
 
 This application is written in Ruby and can be deployed directly to Heroku or Dokku.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 ## Requirements
 This application requires ruby 2.2 at least and a Postgres database.
 
