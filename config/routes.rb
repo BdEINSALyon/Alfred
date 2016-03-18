@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root to: 'check#index'
-
   devise_for :users
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     authenticated :user do
