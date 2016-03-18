@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'cancancan'
+gem 'rails_admin'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'angularjs-rails'
