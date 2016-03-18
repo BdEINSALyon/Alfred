@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318153716) do
+ActiveRecord::Schema.define(version: 20160318164035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(version: 20160318153716) do
     t.string  "ticket_code"
     t.integer "payment_method_id"
   end
+
+  add_index "participants", ["ticket_code"], name: "index_participants_on_ticket_code", using: :btree
 
   create_table "payment_methods", force: :cascade do |t|
     t.string   "name"
