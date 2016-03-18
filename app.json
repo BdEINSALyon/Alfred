@@ -1,0 +1,7 @@
+{
+  "name": "ALFRED",
+  "description": "A ticket search for event management",
+  "repository": "https://github.com/PhilippeGeek/Alfred",
+  "logo": "https://raw.github.com/PhilippeGeek/Alfred/master/app/assets/images/node.png",
+  "keywords": ["rails", "ticket", "search", "yurplan"]
+}
