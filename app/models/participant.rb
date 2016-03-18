@@ -9,5 +9,9 @@ class Participant < ActiveRecord::Base
     object_label_method do
       :label
     end
+    import do
+      include_all_fields
+      mapping_key :ticket_code
+    end
   end
 end

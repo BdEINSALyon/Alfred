@@ -32,6 +32,9 @@ RailsAdmin.config do |config|
     index                         # mandatory
     new
     bulk_delete
+    import do
+      only ['Participant']
+    end
     show
     edit
     delete
@@ -39,5 +42,9 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.configure_with(:import) do |config|
+    config.logging = true
   end
 end

@@ -22,6 +22,7 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'cancancan'
 gem 'rails_admin'
+gem 'rails_admin_import', '~> 1.2'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 gem 'angularjs-rails'
