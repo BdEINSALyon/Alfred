@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'check#index'
+  get 'data' => 'check#data'
   devise_for :users
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
