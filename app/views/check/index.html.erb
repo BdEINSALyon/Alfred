@@ -20,7 +20,7 @@
             <li ng-repeat="p in participants | filter : search" class="list-group-item" ng-click="toggle(p)">
               <h4>{{p.first_name}} {{p.last_name}}</h4>
               <div class="text-center" ng-if="p.id == displayed">
-                <qrcode version="2" error-correction-level="M" size="200" data="string"></qrcode>
+                <qrcode version="2" error-correction-level="M" size="200" data="{{p.ticket_code}}"></qrcode>
               </div>
               <div class="clearfix"></div>
             </li>

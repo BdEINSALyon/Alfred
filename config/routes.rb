@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'data' => 'check#data'
+  get 'check' => 'check#index'
   root to: 'home#index'
   devise_for :users
   devise_scope :user do
