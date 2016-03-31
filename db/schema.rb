@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331194139) do
+ActiveRecord::Schema.define(version: 20160331205254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,9 +76,11 @@ ActiveRecord::Schema.define(version: 20160331194139) do
     t.string  "ticket_code"
     t.integer "payment_method_id"
     t.boolean "checked"
+    t.integer "yurplan_id"
   end
 
   add_index "participants", ["ticket_code"], name: "index_participants_on_ticket_code", using: :btree
+  add_index "participants", ["yurplan_id"], name: "index_participants_on_yurplan_id", using: :btree
 
   create_table "payment_methods", force: :cascade do |t|
     t.string   "name"
@@ -114,4 +116,5 @@ ActiveRecord::Schema.define(version: 20160331194139) do
     t.datetime "updated_at",    null: false
   end
 
+  add_foreign_key "participants", "yurplans"
 end

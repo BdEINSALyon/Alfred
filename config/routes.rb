@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'data' => 'check#data'
-  get 'check' => 'check#index'
+  get 'list' => 'check#index'
+  get 'check/:ticket_code' => 'yurplan_link#check'
+  get 'uncheck/:ticket_code' => 'yurplan_link#uncheck'
   root to: 'home#index'
   devise_for :users
   devise_scope :user do
