@@ -27,6 +27,7 @@ class YurplanLinkController < ApplicationController
         if !p.checked and t['check_status'] == 1
           p.checked = true
         end
+        p.yurplan = @yurplan
         p.save
       end
     end
