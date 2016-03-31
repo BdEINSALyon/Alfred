@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331171747) do
+ActiveRecord::Schema.define(version: 20160331194139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160331171747) do
     t.string  "last_name"
     t.string  "ticket_code"
     t.integer "payment_method_id"
+    t.boolean "checked"
   end
 
   add_index "participants", ["ticket_code"], name: "index_participants_on_ticket_code", using: :btree

@@ -24,6 +24,10 @@ class YurplanLinkController < ApplicationController
           p.first_name = t['first_name']
           p.last_name = t['last_name']
         end
+        if !p.checked and t['check_status'] == 1
+          p.checked = true
+        end
+        p.save
       end
     end
   end
