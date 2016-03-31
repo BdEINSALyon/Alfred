@@ -1,20 +1,22 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'data' => 'check#data'
+  root to: 'home#index'
   devise_for :users
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     authenticated :user do
       root :to => 'admin/dashboard#index', as: :authenticated_root
-      get 'admin/yurplan' => 'yurplan_link#index'
-      post 'admin/yurplan' => 'yurplan_link#load'
     end
     unauthenticated :user do
       root :to => 'users/sessions#new', as: :unauthenticated_root
     end
+    get 'admin/yurplan' => 'yurplan_link#index'
+    post 'admin/yurplan' => 'yurplan_link#load'
   end
-  root to: 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
