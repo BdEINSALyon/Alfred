@@ -18,9 +18,12 @@ class YurplanLinkController < ApplicationController
     # noinspection RubyStringKeysInHashInspection
     HTTParty.get("https://api.yurplan.com/v1/events/#{@yurplan.event_id}/tickets?range=0-999999999",
                  headers:{'Authorization' => "Bearer #{@token}"})['results'].each do |t|
-      Participant.find_or_create_by ticket_code: t['token'] do |p|
-        p.first_name = t['first_name']
-        p.last_name = t['last_name']
+      if t['status'] == 1
+        # noinspection RailsChecklist01
+        p = Participant.find_or_create_by ticket_code: t['token'] do |p|
+          p.first_name = t['first_name']
+          p.last_name = t['last_name']
+        end
       end
     end
   end
