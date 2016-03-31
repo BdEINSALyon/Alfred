@@ -1,5 +1,6 @@
 class Participant < ActiveRecord::Base
   belongs_to :payment_method
+  belongs_to :yurplan
   validates_uniqueness_of :ticket_code
 
   def label

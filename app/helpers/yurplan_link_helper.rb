@@ -1,0 +1,2 @@
+module YurplanLinkHelper
+end

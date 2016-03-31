@@ -1,0 +1,4 @@
+%h1 Charger les tickets YurPlan
+= simple_form_for @yurplans.first,  method: :post do |f|
+  = f.input :id, collection: @yurplans.collect {|y|[y.name, y.id]}, label: false, include_blank: false
+  = f.button :submit, 'Charger' ,class: %w(btn-block)

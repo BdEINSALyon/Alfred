@@ -25,6 +25,8 @@ gem 'rails_admin'
 gem 'rails_admin_import', '~> 1.2'
 gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'httparty'
 gem 'angularjs-rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular-qrcode'

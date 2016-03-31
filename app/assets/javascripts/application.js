@@ -15,6 +15,5 @@
 //= require qrcode-generator
 //= require angular-qrcode
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require_tree .
