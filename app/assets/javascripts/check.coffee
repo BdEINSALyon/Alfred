@@ -7,6 +7,11 @@ app.controller('Participants',['$scope', ($scope) ->
   $scope.participants = window.Participants || [];
   $scope.search = "";
   $scope.displayed = null;
+  $scope.classFor = (p) ->
+    if p.checked
+      'checked'
+    else
+      'unchecked'
   $scope.toggle = (p) ->
     if $scope.displayed == p.id
       $scope.displayed = null;
