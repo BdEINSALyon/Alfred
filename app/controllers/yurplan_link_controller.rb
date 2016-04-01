@@ -14,11 +14,12 @@ class YurplanLinkController < ApplicationController
     if HTTParty.put("https://api.yurplan.com/v1/events/#{@ticket.yurplan.event_id}/tickets/#{@ticket.ticket_code}/check?by_token=true",
                  headers:{'Authorization' => "Bearer #{@token}"})['status'] == 200
       flash[:notice] = 'Billet validé'
-      @ticket.checked = true
-      @ticket.save
+      @ticket.check_date = Time.now
     else
       flash[:error] = 'Le billet était déjà validé'
     end
+    @ticket.checked = true
+    @ticket.save
     redirect_to list_url
   end
 
@@ -30,11 +31,12 @@ class YurplanLinkController < ApplicationController
     if HTTParty.put("https://api.yurplan.com/v1/events/#{@ticket.yurplan.event_id}/tickets/#{@ticket.ticket_code}/uncheck?by_token=true",
                            headers:{'Authorization' => "Bearer #{@token}"})['status'] == 200
       flash[:notice] = 'Billet dévalidé'
-      @ticket.checked = false
-      @ticket.save
+      @ticket.check_date = nil
     else
       flash[:error] = 'Le billet était déjà dévalidé'
     end
+    @ticket.checked = false
+    @ticket.save
     redirect_to list_url
   end
 
@@ -51,8 +53,9 @@ class YurplanLinkController < ApplicationController
           p.first_name = t['first_name']
           p.last_name = t['last_name']
         end
-        if !p.checked and t['check_status'] == 1
+        if t['check_status'] == 1
           p.checked = true
+          p.check_date = Time.at(t['check_date']).to_datetime
         end
         p.yurplan = @yurplan
         p.save
