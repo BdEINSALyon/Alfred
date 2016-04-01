@@ -19,10 +19,10 @@
           <ul class="list-group" id="contact-list" ng-if="search && search.length > 2">
             <li ng-repeat="p in participants | filter : search" class="list-group-item {{classFor(p)}}" ng-click="toggle(p)">
               <h4>{{p.first_name}} {{p.last_name}}</h4>
-              <div class="text-center" ng-if="p.id == displayed">
+              <div class="text-center" ng-if="p.id == displayed && !p.checked">
                 <qrcode version="2" error-correction-level="M" size="200" data="{{p.ticket_code}}"></qrcode>
-                <a class="btn btn-primary btn-block" href="/check/{{p.ticket_code}}">Valider l'entrée</a>
-                <a class="btn btn-danger btn-block" href="/uncheck/{{p.ticket_code}}">Dévalider l'entrée</a>
+                <a class="btn btn-primary btn-block"  href="/check/{{p.ticket_code}}">Valider l'entrée</a>
+                <!--<a class="btn btn-danger btn-block" href="/uncheck/{{p.ticket_code}}">Dévalider l'entrée</a>-->
               </div>
               <div class="clearfix"></div>
             </li>
